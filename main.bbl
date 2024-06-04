@@ -1,0 +1,449 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{MR1774853}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f6fa482f23f84917cbf244cd3e7172ab}{%
+           family={Agler},
+           familyi={A\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e4adec51a04e5bbb739cb0851c2c45cc}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{fullhash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{bibnamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authorbibnamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authornamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authorfullhash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \field{extraname}{1}
+      \field{labelalpha}{AM00}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-1236,1096-0783}
+      \field{journaltitle}{J. Funct. Anal.}
+      \field{number}{1}
+      \field{title}{Complete {N}evanlinna-{P}ick kernels}
+      \field{volume}{175}
+      \field{year}{2000}
+      \field{pages}{111\bibrangedash 124}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1006/jfan.2000.3599
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1006/jfan.2000.3599
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1006/jfan.2000.3599
+      \endverb
+    \endentry
+    \entry{zbMATH01757925}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f6fa482f23f84917cbf244cd3e7172ab}{%
+           family={Agler},
+           familyi={A\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e4adec51a04e5bbb739cb0851c2c45cc}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Providence, RI: American Mathematical Society (AMS)}%
+      }
+      \strng{namehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{fullhash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{bibnamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authorbibnamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authornamehash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \strng{authorfullhash}{c64ed11d679ea613569d2ab681a9b5ea}
+      \field{extraname}{2}
+      \field{labelalpha}{AM02}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-8218-2898-3}
+      \field{issn}{1065-7338}
+      \field{series}{Grad. Stud. Math.}
+      \field{title}{Pick interpolation and {Hilbert} function spaces}
+      \field{volume}{44}
+      \field{year}{2002}
+      \true{nocite}
+      \keyw{47-02,30-02,46-02,47A57,30E05,46E20,32A70}
+    \endentry
+    \entry{fricain:hal-04206953}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=5ebb805d8780de5e260f08da91b026cd}{%
+           family={Fricain},
+           familyi={F\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=6f898b78eab685df7b38ed5186f64edc}{%
+           family={Monographs},
+           familyi={M\bibinitperiod},
+           given={Fields\bibnamedelima Institute},
+           giveni={F\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{fullhash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{bibnamehash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{authorbibnamehash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{authornamehash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{authorfullhash}{5ebb805d8780de5e260f08da91b026cd}
+      \strng{editorbibnamehash}{6f898b78eab685df7b38ed5186f64edc}
+      \strng{editornamehash}{6f898b78eab685df7b38ed5186f64edc}
+      \strng{editorfullhash}{6f898b78eab685df7b38ed5186f64edc}
+      \field{labelalpha}{Fri23}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{{Lectures on analytic functions spaces and their applications.}}
+      \field{title}{{Analytic Function Spaces and their applications : Mini-course on Truncated Toeplitz Operators.}}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{file}
+      \verb https://hal.science/hal-04206953/file/Lecture-TTO-Fricain.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://hal.science/hal-04206953
+      \endverb
+      \verb{url}
+      \verb https://hal.science/hal-04206953
+      \endverb
+    \endentry
+    \entry{zbMATH06595316}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5fda3f0833c91ff123bace8d0aea484e}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Stephan\bibnamedelima Ramon},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=ae4a619de9fab7620b9bfb1f9be1cc49}{%
+           family={Mashreghi},
+           familyi={M\bibinitperiod},
+           given={Javad},
+           giveni={J\bibinitperiod}}}%
+        {{hash=13d615a7c6c2d481d6d57d3d2d9a25e8}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={William\bibnamedelima T.},
+           giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge: Cambridge University Press}%
+      }
+      \strng{namehash}{e836ab67941f4c9439a8e4d6e3e52c47}
+      \strng{fullhash}{157a7cdc7a8271c5577b6ba1ad6f5218}
+      \strng{bibnamehash}{e836ab67941f4c9439a8e4d6e3e52c47}
+      \strng{authorbibnamehash}{e836ab67941f4c9439a8e4d6e3e52c47}
+      \strng{authornamehash}{e836ab67941f4c9439a8e4d6e3e52c47}
+      \strng{authorfullhash}{157a7cdc7a8271c5577b6ba1ad6f5218}
+      \field{labelalpha}{GMR16}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-107-10874-5; 978-1-316-25823-1}
+      \field{series}{Camb. Stud. Adv. Math.}
+      \field{title}{Introduction to model spaces and their operators}
+      \field{volume}{148}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1017/CBO9781316258231
+      \endverb
+      \keyw{30-02,46-02,47-02,30H10,46E20,47A45,47B35}
+    \endentry
+    \entry{WinNT}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2bf0cb6df01fbc9b597ec1656e881e08}{%
+           family={Marx},
+           familyi={M\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \strng{fullhash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \strng{bibnamehash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \strng{authorbibnamehash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \strng{authornamehash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \strng{authorfullhash}{2bf0cb6df01fbc9b597ec1656e881e08}
+      \field{labelalpha}{Mar14}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Complete Pick Property and Reproducing Kernel Hilbert Spaces}
+      \field{urlday}{3}
+      \field{urlmonth}{1}
+      \field{urlyear}{2014}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://vtechworks.lib.vt.edu/bitstream/handle/10919/24783/Marx_G_T_2014.pdf
+      \endverb
+      \verb{url}
+      \verb https://vtechworks.lib.vt.edu/bitstream/handle/10919/24783/Marx_G_T_2014.pdf
+      \endverb
+    \endentry
+    \entry{zbMATH01958469}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e4adec51a04e5bbb739cb0851c2c45cc}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \strng{fullhash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \strng{bibnamehash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \strng{authorbibnamehash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \strng{authornamehash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \strng{authorfullhash}{e4adec51a04e5bbb739cb0851c2c45cc}
+      \field{labelalpha}{McC03}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0002-9890}
+      \field{journaltitle}{Am. Math. Mon.}
+      \field{number}{1}
+      \field{title}{Pick's theorem -- what's the big deal?}
+      \field{volume}{110}
+      \field{year}{2003}
+      \true{nocite}
+      \field{pages}{36\bibrangedash 45}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.2307/3072342
+      \endverb
+      \keyw{30E05,47A20,47A57,47N70,93B36}
+    \endentry
+    \entry{MR1284929}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=593727225b88b22cff992498e9a24527}{%
+           family={McCullough},
+           familyi={M\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser Boston, Boston, MA}%
+      }
+      \strng{namehash}{593727225b88b22cff992498e9a24527}
+      \strng{fullhash}{593727225b88b22cff992498e9a24527}
+      \strng{bibnamehash}{593727225b88b22cff992498e9a24527}
+      \strng{authorbibnamehash}{593727225b88b22cff992498e9a24527}
+      \strng{authornamehash}{593727225b88b22cff992498e9a24527}
+      \strng{authorfullhash}{593727225b88b22cff992498e9a24527}
+      \field{labelalpha}{McC94}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Algebraic methods in operator theory}
+      \field{isbn}{0-8176-3745-1}
+      \field{title}{The local de {B}ranges-{R}ovnyak construction and complete {N}evanlinna-{P}ick kernels}
+      \field{year}{1994}
+      \field{pages}{15\bibrangedash 24}
+      \range{pages}{10}
+    \endentry
+    \entry{zbMATH06562440}{book}{}
+      \name{author}{2}{}{%
+        {{hash=56615d367b57252782969008be14c358}{%
+           family={Paulsen},
+           familyi={P\bibinitperiod},
+           given={Vern\bibnamedelima I.},
+           giveni={V\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=4b56d49e3d9b641fe3b89671ab4d14b1}{%
+           family={Raghupathi},
+           familyi={R\bibinitperiod},
+           given={Mrinal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge: Cambridge University Press}%
+      }
+      \strng{namehash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \strng{fullhash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \strng{bibnamehash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \strng{authorbibnamehash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \strng{authornamehash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \strng{authorfullhash}{2100f2dbf09d7ddd50090b963ce7f749}
+      \field{labelalpha}{PR16}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-107-10409-9; 978-1-316-21923-2}
+      \field{series}{Camb. Stud. Adv. Math.}
+      \field{title}{An introduction to the theory of reproducing kernel {Hilbert} spaces}
+      \field{volume}{152}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1017/CBO9781316219232
+      \endverb
+      \keyw{46-02,46E22,47B32}
+    \endentry
+    \entry{zbMATH00222166}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5fcc672cc856248f1825371587d2a4f3}{%
+           family={Quiggin},
+           familyi={Q\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{5fcc672cc856248f1825371587d2a4f3}
+      \strng{fullhash}{5fcc672cc856248f1825371587d2a4f3}
+      \strng{bibnamehash}{5fcc672cc856248f1825371587d2a4f3}
+      \strng{authorbibnamehash}{5fcc672cc856248f1825371587d2a4f3}
+      \strng{authornamehash}{5fcc672cc856248f1825371587d2a4f3}
+      \strng{authorfullhash}{5fcc672cc856248f1825371587d2a4f3}
+      \field{labelalpha}{Qui93}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0378-620X}
+      \field{journaltitle}{Integral Equations Oper. Theory}
+      \field{number}{2}
+      \field{title}{For which reproducing kernel {Hilbert} spaces is {Pick}'s theorem true!}
+      \field{volume}{16}
+      \field{year}{1993}
+      \field{pages}{244\bibrangedash 266}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/BF01358955
+      \endverb
+      \keyw{30E05,46E22,47A20}
+    \endentry
+    \entry{1cb1f5bb-aa4a-31e2-ba77-0159c6d327f4}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8cdb3b4c702056eeaa748ba9e4c739c5}{%
+           family={Sarason},
+           familyi={S\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \strng{fullhash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \strng{bibnamehash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \strng{authorbibnamehash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \strng{authornamehash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \strng{authorfullhash}{8cdb3b4c702056eeaa748ba9e4c739c5}
+      \field{labelalpha}{Sar67}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00029947}
+      \field{journaltitle}{Transactions of the American Mathematical Society}
+      \field{number}{2}
+      \field{title}{Generalized Interpolation in \texorpdfstring{$H^{\infty}$}{H-infinity}}
+      \field{urlday}{14}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{volume}{127}
+      \field{year}{1967}
+      \field{urldateera}{ce}
+      \field{pages}{179\bibrangedash 203}
+      \range{pages}{25}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1994641
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1994641
+      \endverb
+    \endentry
+    \entry{MR2187439}{article}{}
+      \name{author}{1}{}{%
+        {{hash=edd270370bb87270e3d7c9d3a028dad2}{%
+           family={Serra},
+           familyi={S\bibinitperiod},
+           given={António},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{edd270370bb87270e3d7c9d3a028dad2}
+      \strng{fullhash}{edd270370bb87270e3d7c9d3a028dad2}
+      \strng{bibnamehash}{edd270370bb87270e3d7c9d3a028dad2}
+      \strng{authorbibnamehash}{edd270370bb87270e3d7c9d3a028dad2}
+      \strng{authornamehash}{edd270370bb87270e3d7c9d3a028dad2}
+      \strng{authorfullhash}{edd270370bb87270e3d7c9d3a028dad2}
+      \field{labelalpha}{Ser05}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0378-620X,1420-8989}
+      \field{journaltitle}{Integral Equations Operator Theory}
+      \field{number}{4}
+      \field{title}{New examples of non-complete {P}ick kernels}
+      \field{volume}{53}
+      \field{year}{2005}
+      \field{pages}{553\bibrangedash 572}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/s00020-005-1363-7
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00020-005-1363-7
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00020-005-1363-7
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

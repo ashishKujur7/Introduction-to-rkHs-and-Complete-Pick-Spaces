@@ -1,0 +1,656 @@
+\documentclass[handout]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+%\usepackage[english]{babel}
+%\usepackage{metalogo}
+%\usepackage{listings}
+%\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{silence}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\WarningFilter{latexfont}{Font shape}
+
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{question}[theorem]{Question}
+
+%\numberwithin{equation}{chapter}
+
+\usepackage[backend=biber,style=alphabetic, maxnames=2]{biblatex}
+\addbibresource{main.bib}
+\setbeamertemplate{bibliography item}[text]
+
+\DeclareBibliographyAlias{article}{std}
+\DeclareBibliographyAlias{book}{std}
+\DeclareBibliographyAlias{booklet}{std}
+\DeclareBibliographyAlias{collection}{std}
+\DeclareBibliographyAlias{inbook}{std}
+\DeclareBibliographyAlias{incollection}{std}
+\DeclareBibliographyAlias{inproceedings}{std}
+\DeclareBibliographyAlias{manual}{std}
+\DeclareBibliographyAlias{misc}{std}
+\DeclareBibliographyAlias{online}{std}
+\DeclareBibliographyAlias{patent}{std}
+\DeclareBibliographyAlias{periodical}{std}
+\DeclareBibliographyAlias{proceedings}{std}
+\DeclareBibliographyAlias{report}{std}
+\DeclareBibliographyAlias{thesis}{std}
+\DeclareBibliographyAlias{unpublished}{std}
+\DeclareBibliographyAlias{*}{std}
+
+\DeclareBibliographyDriver{std}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit\newblock
+  \usebibmacro{date}%
+  \newunit\newblock
+  \usebibmacro{finentry}}
+
+% section symbol
+%\renewcommand{\thesection}{\S\arabic{section}}
+
+% \renewcommand{\Pr}{{\bf Pr}}
+% \newcommand{\Prx}{\mathop{\bf Pr\/}}
+% \newcommand{\E}{{\bf E}}
+% \newcommand{\Ex}{\mathop{\bf E\/}}
+% \newcommand{\Var}{{\bf Var}}
+% \newcommand{\Varx}{\mathop{\bf Var\/}}
+% \newcommand{\Cov}{{\bf Cov}}
+% \newcommand{\Covx}{\mathop{\bf Cov\/}}
+
+% shortcuts for symbol names that are too long to type
+\newcommand{\eps}{\epsilon}
+\newcommand{\lam}{\lambda}
+\renewcommand{\l}{\ell}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+
+% % "blackboard-fonted" letters for the reals, naturals etc.
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\D}{\mathbb D}
+\newcommand{\T}{\mathbb T}
+
+% % operators that should be typeset in Roman font
+% \newcommand{\poly}{\mathrm{poly}}
+% \newcommand{\polylog}{\mathrm{polylog}}
+% \newcommand{\sgn}{\mathrm{sgn}}
+% \newcommand{\avg}{\mathop{\mathrm{avg}}}
+% \newcommand{\val}{{\mathrm{val}}}
+
+% % complexity classes
+% \renewcommand{\P}{\mathrm{P}}
+% \newcommand{\NP}{\mathrm{NP}}
+% \newcommand{\BPP}{\mathrm{BPP}}
+% \newcommand{\DTIME}{\mathrm{DTIME}}
+% \newcommand{\ZPTIME}{\mathrm{ZPTIME}}
+% \newcommand{\BPTIME}{\mathrm{BPTIME}}
+% \newcommand{\NTIME}{\mathrm{NTIME}}
+
+% values associated to optimization algorithm instances
+\newcommand{\Opt}{{\mathsf{Opt}}}
+\newcommand{\Alg}{{\mathsf{Alg}}}
+\newcommand{\Lp}{{\mathsf{Lp}}}
+\newcommand{\Sdp}{{\mathsf{Sdp}}}
+\newcommand{\Exp}{{\mathsf{Exp}}}
+
+% if you think the sum and product signs are too big in your math mode; x convention
+% as in the probability operators
+\newcommand{\littlesum}{{\textstyle \sum}}
+\newcommand{\littlesumx}{\mathop{{\textstyle \sum}}}
+\newcommand{\littleprod}{{\textstyle \prod}}
+\newcommand{\littleprodx}{\mathop{{\textstyle \prod}}}
+
+
+% calligraphic letters
+\newcommand{\calA}{{\mathcal A}}
+\newcommand{\calB}{{\mathcal B}}
+\newcommand{\calC}{{\mathcal C}}
+\newcommand{\calD}{{\mathcal D}}
+\newcommand{\calE}{{\mathcal E}}
+\newcommand{\calF}{{\mathcal F}}
+\newcommand{\calG}{{\mathcal G}}
+\newcommand{\calH}{{\mathcal H}}
+\newcommand{\calI}{{\mathcal I}}
+\newcommand{\calJ}{{\mathcal J}}
+\newcommand{\calK}{{\mathcal K}}
+\newcommand{\calL}{{\mathcal L}}
+\newcommand{\calM}{{\mathcal M}}
+\newcommand{\calN}{{\mathcal N}}
+\newcommand{\calO}{{\mathcal O}}
+\newcommand{\calP}{{\mathcal P}}
+\newcommand{\calQ}{{\mathcal Q}}
+\newcommand{\calR}{{\mathcal R}}
+\newcommand{\calS}{{\mathcal S}}
+\newcommand{\calT}{{\mathcal T}}
+\newcommand{\calU}{{\mathcal U}}
+\newcommand{\calV}{{\mathcal V}}
+\newcommand{\calW}{{\mathcal W}}
+\newcommand{\calX}{{\mathcal X}}
+\newcommand{\calY}{{\mathcal Y}}
+\newcommand{\calZ}{{\mathcal Z}}
+
+% proof
+%\renewcommand{\qedsymbol}{$\ddot\smile$}
+
+
+% bold letters (useful for random variables)
+%----------------------------------------------
+% \renewcommand{\a}{{\boldsymbol a}}
+% \renewcommand{\b}{{\boldsymbol b}}
+% \renewcommand{\c}{{\boldsymbol c}}
+% \renewcommand{\d}{{\boldsymbol d}}
+% \newcommand{\e}{{\boldsymbol e}}
+% \newcommand{\f}{{\boldsymbol f}}
+% \newcommand{\g}{{\boldsymbol g}}
+% \newcommand{\h}{{\boldsymbol h}}
+% \renewcommand{\i}{{\boldsymbol i}}
+% \renewcommand{\j}{{\boldsymbol j}}
+% \renewcommand{\k}{{\boldsymbol k}}
+% \newcommand{\m}{{\boldsymbol m}}
+% \newcommand{\n}{{\boldsymbol n}}
+% \renewcommand{\o}{{\boldsymbol o}}
+% \newcommand{\p}{{\boldsymbol p}}
+% \newcommand{\q}{{\boldsymbol q}}
+% \renewcommand{\r}{{\boldsymbol r}}
+% \newcommand{\s}{{\boldsymbol s}}
+% \renewcommand{\t}{{\boldsymbol t}}
+% \renewcommand{\u}{{\boldsymbol u}}
+% \renewcommand{\v}{{\boldsymbol v}}
+% \newcommand{\w}{{\boldsymbol w}}
+% \newcommand{\x}{{\boldsymbol x}}
+% \newcommand{\y}{{\boldsymbol y}}
+% \newcommand{\z}{{\boldsymbol z}}
+% \newcommand{\A}{{\boldsymbol A}}
+% \newcommand{\B}{{\boldsymbol B}}
+% \newcommand{\C}{{\boldsymbol C}}
+% \newcommand{\D}{{\boldsymbol D}}
+% \newcommand{\E}{{\boldsymbol E}}
+% \newcommand{\F}{{\boldsymbol F}}
+% \newcommand{\G}{{\boldsymbol G}}
+% \renewcommand{\H}{{\boldsymbol H}}
+% \newcommand{\I}{{\boldsymbol I}}
+% \newcommand{\J}{{\boldsymbol J}}
+% \newcommand{\K}{{\boldsymbol K}}
+% \renewcommand{\L}{{\boldsymbol L}}
+% \newcommand{\M}{{\boldsymbol M}}
+% \renewcommand{\O}{{\boldsymbol O}}
+% \renewcommand{\P}{{\mathbb{P}}}
+% \newcommand{\Q}{{\boldsymbol Q}}
+% \newcommand{\R}{{\boldsymbol R}}
+% \renewcommand{\S}{{\boldsymbol S}}
+% \newcommand{\T}{{\boldsymbol T}}
+% \newcommand{\U}{{\boldsymbol U}}
+% \newcommand{\V}{{\boldsymbol V}}
+% \newcommand{\W}{{\boldsymbol W}}
+% \newcommand{\X}{{\boldsymbol X}}
+% \newcommand{\Y}{{\boldsymbol Y}}
+% \newcommand{\Z}{{\boldsymbol Z}}
+
+% script letters
+\newcommand{\scrA}{{\mathscr A}}
+\newcommand{\scrB}{{\mathscr B}}
+\newcommand{\scrC}{{\mathscr C}}
+\newcommand{\scrD}{{\mathscr D}}
+\newcommand{\scrE}{{\mathscr E}}
+\newcommand{\scrF}{{\mathscr F}}
+\newcommand{\scrG}{{\mathscr G}}
+\newcommand{\scrH}{{\mathscr H}}
+\newcommand{\scrI}{{\mathscr I}}
+\newcommand{\scrJ}{{\mathscr J}}
+\newcommand{\scrK}{{\mathscr K}}
+\newcommand{\scrL}{{\mathscr L}}
+\newcommand{\scrM}{{\mathscr M}}
+\newcommand{\scrN}{{\mathscr N}}
+\newcommand{\scrO}{{\mathscr O}}
+\newcommand{\scrP}{{\mathscr P}}
+\newcommand{\scrQ}{{\mathscr Q}}
+\newcommand{\scrR}{{\mathscr R}}
+\newcommand{\scrS}{{\mathscr S}}
+\newcommand{\scrT}{{\mathscr T}}
+\newcommand{\scrU}{{\mathscr U}}
+\newcommand{\scrV}{{\mathscr V}}
+\newcommand{\scrW}{{\mathscr W}}
+\newcommand{\scrX}{{\mathscr X}}
+\newcommand{\scrY}{{\mathscr Y}}
+\newcommand{\scrZ}{{\mathscr Z}}
+
+\newcommand{\im}{{\text{im }}}
+\newcommand{\ip}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+
+%\usetheme{Nord}
+% \usetheme[style=light]{Nord}
+
+%\setmainfont{JetBrains Mono Regular}
+%\setsansfont{JetBrains Mono Regular}
+%\setmonofont{JetBrains Mono Regular}
+
+%\setmainfont{Noto Sans Regular}
+%\setsansfont{Noto Sans Regular}
+%\setmonofont{Noto Sans Mono Regular}
+
+\title{Reproducing kernel Hilbert spaces \&  (Complete) Pick property}
+\subtitle{A brief introduction}
+\author{Ashish Kujur}
+\institute{Indian Institute of Science Education and Research, Thiruvananthapuram}
+\date{June 4, 2024}
+
+\begin{document}
+ \begin{frame}[plain,noframenumbering]
+   \maketitle
+ \end{frame}
+
+ \begin{frame}{Notations}
+\begin{itemize}
+\item The \textit{open unit disc} $\left\{ z\in \C : \abs{z} < 1 \right\}$ of the complex plane will be denoted by $\D$.
+\item The boundary of $\D$ namely \textit{the unit circle of the complex plane} will be denoted by $\T$. That is $\T = \left\{ z \in \C : \abs{z} = 1 \right\}$. 
+\item For any open subset $\Omega \subset \C$, $\calO \left( \Omega \right)$ will denote the set of all holomorphic functions on $\Omega$.
+\item The set of all \textit{bounded} holomorphic functions on the open unit disc $\D$ will be denoted by $H^{\infty} \left( \D \right)$.
+\item If $V,W$ is a normed linear spaces then the set of all bounded operators is denoted by $\calB \left( V, W \right)$.
+\end{itemize}
+ \end{frame}
+
+\begin{frame}{Pick Nevanlinna Problem}
+\begin{question}[Motivation?]
+Given \textit{initial data} of $n$ distinct points $\lambda_{1}, \lambda_{2}, \ldots , \lambda_{n} \in \D$ and \textit{target data} of $n$ points $w_{1}, w_{2}, \ldots , w_{n} \in \C$, is there a \textit{holomorphic} function $\varphi : \D \to \C$ such that $\varphi \left( \lambda_{i} \right) = w_{i}$ for each $i=1, \ldots, n$?
+\end{question}
+\pause
+Unsuprisingly, existence of such a holomorphic function is given by Lagrange interpolating polynomial.
+\pause
+\begin{question}[Pick (1916), Nevanlinna (1919)]
+Given \textit{initial data} of $n$ points $\lambda_{1}, \lambda_{2}, \ldots , \lambda_{n} \in \D$ and \textit{target data} of $n$ points $w_{1}, w_{2}, \ldots , w_{n} \in \textcolor{red}{\overline{\D}}$, is there a \textit{holomorphic} function $\varphi : \D \to \C$ such that $\varphi \left( \lambda_{i} \right) = w_{i}$ for each $i=1, \ldots, n$ \textcolor{red}{and furthermore $\abs{\varphi \left( \lambda \right)} \le 1$ for each $\lambda \in \D$}?
+\end{question}
+\end{frame}
+
+\begin{frame}{Answer to Pick Nevanlinna Problem}
+\begin{theorem}[Pick-Nevanlinna Theorem]
+Let $\left( \lambda_{i} \right)_{1\le i \le n}$ be $n$ distinct points in $\D$ and let $\left( w_{i} \right)_{1 \le i \le n} \subset \C$. Then the following are equivalent:
+\begin{enumerate}
+\item There is a holomorphic function such that 
+\begin{equation*}
+f\left( \lambda_{i} \right) = w_{i} \qquad \left( 1 \le i \le n \right),
+\end{equation*}
+and, moreover, $\norm{f}_{\infty} \le 1$.
+\item The matrix $P = \left( P_{j,k} \right)_{1 \le j,k \le n}$ is positive semidefinite where
+\begin{equation*}
+P_{j,k} = \frac{1-w_{j}\overline{w_{k}}}{1-\lambda_{j}\overline{\lambda_{k}}} \qquad \left( j,k = 1, \ldots , n \right)
+\end{equation*}
+\end{enumerate}
+\label{thm:classical-np-problem}
+\end{theorem}
+\pause
+\begin{definition}[Pick matrix]
+The matrix $P$ associated with the initial data $\left( \lambda_{i} \right)_{1\le i \le n} \subset \D$ and $\left( w_{i} \right)_{1 \le i \le n} \subset \C$ is called the (associated) \textit{Pick matrix}.
+\label{def:Pick-matrix}
+\end{definition}
+\end{frame}
+
+\begin{frame}{A general setup: Reproducing kernel Hilbert space}
+We prove the necessity of the previous theorem later but we will be doing so in much general setup:
+\pause
+\begin{definition}[Reproducing kernel Hilbert space]
+Let $\Omega$ be a set and let $\calF \left( \Omega, \C \right)$ denote the set of the functions from $\Omega$ to $\C$. A Hilbert space $\calH \subset \calF \left( \Omega, \C \right)$ is called a \textit{reproducing kernel Hilbert space} (rkHs, in short) if
+\begin{enumerate}
+\pause
+\item For each $z\in \Omega$, the evaluation functional 
+\begin{align*}
+\calE_{z} :\calH &\to \C \\
+ f &\mapsto f(z) 
+\end{align*}
+is bounded.
+\pause
+\item For each $z\in \Omega$, there is some function $f_{z} \in \calH$ such that $f_{z} \left( z \right) \ne 0$.
+\end{enumerate}
+\label{def:rkHs}
+\end{definition}
+\end{frame}
+
+\begin{frame}{The kernel function associated to a rkHs}
+By the definition of rkHs, the evaluation functional $\calE_{w}$ is bounded for each $w\in \Omega$. Therefore, by the \textit{Riesz representation theorem}, there is a unique function $K\left( \cdot ,w \right) \in \calH$ such that 
+\begin{equation}
+f(w)=\ip{f, K\left( \cdot , w \right)} \qquad \left( f \in \calH \right).
+\label{eqn:kernel}
+\end{equation}
+
+
+\pause
+\begin{definition}[the kernel function]
+Let $\calH$ be rkHs on $\Omega$. The \textit{kernel function associated to $\calH$} is the function
+\begin{equation*}
+K : \Omega \times \Omega \to \C
+\end{equation*}
+satisfying Equation \ref{eqn:kernel}. For each $w\in \Omega$, the function $K\left( \cdot , w \right) \in \calH$ is called \textit{the reproducing kernel at the point $w$}.
+\label{def:kernel-function}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Primary Examples of rkHs: Analytic Function Spaces}
+Let $\Omega = \D$ the open unit disc. For each $s\in \R$, consider the set of holomorphic functions $\calH _{s}$ on $\D$
+\begin{equation}
+\calH _{s} := \left\{ f=\sum_{n \ge 0} \hat{f}\left( n \right) z^{n} \in \calO \left( \D \right) : \sum_{n\ge 0} \left( n+1 \right)^{-s}\abs{\hat{f}(n)}^{2}  < \infty \right\}.
+\end{equation}
+Each $\calH_{s}$ is a rkHs where $\norm{f}_{\calH_{s}}^{2} := \sum_{n\ge 0} \left( n+1 \right)^{-s}\abs{\hat{f}(n)}^{2}$.
+\pause
+\begin{figure}
+\begin{tabular}{ | c | c c | } 
+\hline
+ s & Name & Kernel Function \\ 
+ \hline
+ -1 & Bergman space $A^{2} \left( \D \right)$ & $ K(z,w) = \frac{1}{\left( 1-\bar{w}z \right)^{2}}$ \\
+ 0 & Hardy space $H^{2} \left( \D \right)$ & $ K(z,w) = \frac{1}{\left( 1-\bar{w}z \right)}$ \\ 
+ 1 & Dirichlet space $\calD$ & $K(z,w) = \begin{cases} \frac{1}{z\bar{w}} \log \left( \frac{1}{1-z\bar{w}} \right) & w \ne 0 \\ 1 & w= 0 \end{cases}$ \\
+ \hline 
+\end{tabular}
+\end{figure}
+\end{frame}
+\begin{frame}{The Hardy Space}
+Hardy space can be equivalently defined as the set of all functions $f \in \calO \left( \D \right)$ such that 
+\begin{equation*}
+\sup_{0\le r < 1} \int_{0}^{2\pi} \abs{f\left( re^{it} \right)}^{2} \, dt < \infty.
+\end{equation*}
+\pause
+It can be easily shown that
+\begin{equation*}
+\norm{f}_{H^{2} \left( \D \right)} ^{2} := \sum_{n\ge 0} \abs{a_{n}}^{2} = \sup_{0\le r < 1} \int_{0}^{2\pi} \abs{f\left( re^{it} \right)}^{2} \, dt
+\end{equation*}
+for each $f= \sum_{n\ge 0} a_{n} z^{n} \in H^{2} \left( \D \right)$.
+\end{frame}
+\begin{frame}{The Multiplier Algebra associated to a rkHs}
+\begin{definition}[Multiplier Algebra]
+Let $\calH$ be a rkHs on $\Omega$. We define the \textit{multiplier algebra $\calM \left( \calH \right)$ associated with the rkHs $\calH$} to be
+\begin{equation*}
+\calM \left( \calH \right) := \left\{ \varphi :  \Omega \to \C  \mid \varphi f \in \calH \text{ for each } f \in \calH \right\}.
+\end{equation*}
+\label{def:mult-alg}
+\end{definition}
+For each $\varphi \in \calM \left( \calH \right)$, we define the multiplier norm of $\varphi$ to be 
+\begin{equation*}
+\norm{\varphi}_{\calM \left( \calH \right)} := \norm{M_{\varphi}}
+\end{equation*}
+where $M_{\varphi} : \calH \to \calH$ is the multiplication by $\varphi$ operator.
+\pause
+With the above setup, $\calM \left( \calH \right)$ becomes a commutative Banach algebra with the multiplication being pointwise product.
+\pause
+In practice, rkHs contain the analytic polynomials, hence, in particular, the constant function $1$. Consequently, $\calM \left( \calH \right) \subset \calH$.
+\end{frame}
+
+\begin{frame}{Some Properties of the Multiplier Algebra}
+\begin{proposition}
+Let $\calH$ be a rkHs on $\Omega$. If $\varphi \in \calM \left( \calH \right)$ then for each $w\in \Omega$, 
+\begin{equation*}
+M_{\varphi}^{*} k\left( \cdot , w \right) = \overline{\varphi (w)} k\left( \cdot , w \right).
+\end{equation*}
+\end{proposition}
+\pause
+\begin{corollary}
+With setup in the previous proposition, if $\varphi \in \calM \left( \calH \right)$ then we have
+\begin{equation*}
+\sup_{w\in \Omega} \abs{\varphi (w)} \le \norm{\varphi}_{\calM \left( \calH \right)}.
+\end{equation*}
+\label{cor:boundedness-of-multiplier}
+\end{corollary}
+\pause
+\label{prop:adjoint-eigenvalue}
+As a consequence of the previous corollary, we have that $\calM \left( \calH \right) \subset \calH \cap \calB \left( \Omega \right)$ where $\calB \left( \Omega \right)$ is the set of bounded functions on $\Omega$.
+\end{frame}
+
+\begin{frame}{Example: Multiplier of the Hardy Space}
+Consider the Hardy space $H^{2} \left( \D \right)$. From the previous slide, we conclude that 
+\begin{equation*}
+\calM \left( H^{2} \right) \subset H^{2} \cap \calB \left( \D \right) = H^{\infty} \left( \D \right).
+\end{equation*}
+\pause
+In fact, if $\varphi \in H^{\infty} \left( \D \right)$ and $f \in H^{2}$, we have that 
+
+\begin{align*}
+\norm{\varphi f}_{H^{2}}^{2} &= \sup_{0\le r < 1} \int_{0}^{2\pi} \abs{\varphi \left( re^{it} \right) f \left( re^{it} \right)}^{2} \, dt \\
+&\le \norm{\varphi}_{H^{\infty}}^{2} \sup_{0 \le r < 1} \int_{0}^{2\pi} \abs{f\left( re^{it} \right)}^{2} \, dt \\
+&= \norm{\varphi}_{H^{\infty}}^{2} \norm{f}_{H^{2}}^{2}.
+\end{align*}
+This shows that $\calM \left( H^{2} \right) = H^{\infty} \left( \D \right)$.
+\end{frame}
+
+\begin{frame}{Rephrasing the Pick Nevanlinna Problem in the language of rkHs}
+\citeauthor{1cb1f5bb-aa4a-31e2-ba77-0159c6d327f4} \cite{1cb1f5bb-aa4a-31e2-ba77-0159c6d327f4} realised that the Pick Nevanlinna Problem can be recasted for rkHs. In the following theorem, let $\calH \textcolor{red}{= H^{2} \left( \D \right)}$.
+\begin{theorem}
+Let $\left( \lambda_{i} \right)_{1\le i \le n}$ be $n$ distinct points in $\D$ and let $\left( w_{i} \right)_{1 \le i \le n} \subset \C$. Then the following are equivalent:
+\begin{enumerate}
+\item There is $\varphi \in \calM \left( \calH \right) \textcolor{red}{= H^{\infty} \left( \D \right)}$ with $\norm{\varphi}_{\calM \left( \calH \right)} \textcolor{red}{=\norm{M_{\varphi}} = \norm{\varphi}_{H^{\infty}}}\le 1$ and 
+\begin{equation*}
+f\left( \lambda_{i} \right) = w_{i} \qquad \left( 1 \le i \le n \right),
+\end{equation*}
+\item The matrix $P = \left( P_{j,k} \right)_{1 \le j,k \le n}$ is positive semidefinite where
+\begin{equation*}
+P_{j,k} = \left( 1-w_{j}\overline{w_{k}} \right) k(\lambda_{i}, \lambda_{j})  \textcolor{red}{=\frac{1-w_{j} \overline{w_{k}}}{1-\lambda_{j}\overline{\lambda_{k}}}} \qquad \left( j,k = 1, \ldots , n \right)
+\end{equation*}
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Existence of an interpolating contractive multiplier implies positivity of Pick matrix}
+Let $\calH$ be a rkHs in $\Omega$. Let $\left( \lambda_{i} \right)_{1\le i \le n}$ be $n$ distinct points in $\Omega$ and let $\left( w_{i} \right)_{1 \le i \le n} \subset \C$.
+
+Suppose that there exists a $\varphi \in \calM \left( \calH \right)$ such that $\norm{\varphi}_{\calM \left( \calH \right)} \le 1$ and $\varphi \left( \lambda_{i} \right) = w_{i}$ for each $i=1,2, \ldots , n$. Let $P$ be the corresponding Pick matrix. \pause For each $a_{1}, a_{2}, \ldots , a_{n} \in \C$, we have
+\begin{align*}
+& \ip{\left( I-M_{\varphi} M_{\varphi} ^{*} \right) \left( \sum_{j=1}^{n} a_{j} k\left( \cdot , \lambda_{j} \right) \right),  \left( \sum_{i=1}^{n} a_{i} k\left( \cdot , \lambda_{i} \right) \right)}_{\calH} \\ &= \sum_{i,j=1}^{n} a_{j}\bar{a_{i}} \left( 1-\bar w_{j} w_{i} \right) k\left( \lambda_{i}, \lambda_{j} \right) = \sum_{i,j=1}^{n} a_{j} \bar a_{i} P_{ij} \\ &= \ip{P\left( \sum_{j=1}^{n} a_{j} e_{j} \right) , \sum_{i=1}^{n} a_{i} e_{i}}_{\C ^{n}}.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Pick Spaces}
+We showed that in any rkHs, existence of contractive multiplier implies the positivity of the Pick matrix. The converse need to be true (for instance, this does not hold in the Bergman space).
+\pause
+\begin{definition}[Pick space]
+Let $\calH$ be an rkHs on $\Omega$. We say that $\calH$ is a \textit{Pick space} if for every distinct $n$ points $\lambda_{1}, \lambda_{2}, \ldots , \lambda_{n} \in \Omega$ and every $n$ points $w_{1}, w_{2}, \ldots , w_{n} \in \C$, the positivity of the corresponding Pick matrix implies that there is some $\varphi \in \calM \left( \calH \right)$ such that $\norm{\varphi}_{\calM \left( \calH \right)} \le 1$ and $\varphi \left( \lambda_{i} \right) = w_{i}$ for each $i=1, \ldots , n$.
+\label{def:Pick space}
+\end{definition}
+\pause
+\begin{example}
+Hardy and Dirichlet space are Pick spaces but Bergman space is not.
+\end{example}
+\end{frame}
+
+\begin{frame}{Interpolating Operators?}
+Let $\calH$ be a rkHs on $\Omega$ and $\calE , \calE'$ be two Hilbert spaces.
+\pause
+Suppose that $\lambda_{1}, \ldots, \lambda_{n} \in \Omega$ be distinct and $W_{1}, \ldots , W_{n} \in \cal{B} \left( \calE , \calE' \right)$. 
+\pause
+\begin{question}
+When can we find a multiplier $\Phi \in \calM_{\calH} \left( \calE , \calE' \right)$ (\textit{what does this mean?}) such that $\norm{M_{\Phi}} \le 1$ and $\Phi \left( \lambda_{i} \right) = W_{i}$ for each $i=1, \ldots , n$?
+\end{question}
+\pause
+To this end, we define the notion of \ldots
+
+\end{frame}
+
+%\begin{frame}{Inner Functions and all the examples}
+%\begin{definition}[inner function]
+%A function $\Theta \in H^{\infty} \left( \D \right)$ is called \textit{inner} if
+%\begin{equation*}
+%\lim_{r \to 1^{-}} \Theta \left( r\zeta \right) = 1 
+%\end{equation*}
+%for almost all $\zeta \in \T$.
+%\label{def:inner}
+%\end{definition}
+%\pause
+%\begin{example}[Blaschke products]
+%Any functions of the form $B(z)= z^{k}\prod_{n=1}^{\infty} \frac{\abs{a_{n}}}{a_{n}} \frac{a_{n} - z}{1- \bar a_{n} z}$ where $\left\{ a_{n} \right\}$ is a sequence of nonzero numbers and $\sum_{n \ge 0} (1-|a_n|) < \infty$ is an inner function. Such functions are called \textit{Blaschke products}.
+%\end{example}
+%\pause 
+%\begin{example}[Singular Inner Function]
+%Any function of the form $S_{\mu} (z) = \exp \left( - \int_{\T} \frac{\zeta + z}{\zeta -z} d\mu \left( \zeta \right) \right)$ where $\mu$ is a measure which is singular with respect to the normalised Lebesgue measure on $\T$ is an inner function. Such functions are called \textit{Singular Inner Functions}.
+%\end{example}
+
+%\end{frame}
+
+%\begin{frame}{Model Spaces and the Compressed Shift}
+%\begin{definition}[Model Spaces]
+%Let $\Theta$ be an nonconstant inner function. The \textit{model space} $K_{\Theta}$ is the Hilbert space of analytic functions defined by
+%\begin{equation*}
+%K_{\Theta} := H^{2} \ominus \Theta H^{2}.
+%\end{equation*}
+%\label{def:model-space}
+%\end{definition}
+
+%\begin{definition}[Compressed Shift]
+%Let $K_{\Theta}$ be a model space. The compressed shift is the operator on $K_{\Theta}$ defined as follows:
+%\begin{align*}
+%S_{\Theta} : K_{\Theta} &\to K_{\Theta} \\
+%f & \mapsto P_{\Theta} \left( zf \right) \qquad \left( f \in K_{\Theta} \right)
+%\end{align*}
+%where $P_{\Theta}$ is the projection from $L^{2} \left( \T \right)$ onto the model space $K_{\Theta}$.
+%\label{def:compressed-shift}
+%\end{definition}
+%\end{frame}
+
+%\begin{frame}{Sarason's Result and Truncated Toeplitz Operators}
+%hello
+%\end{frame}
+
+\begin{frame}{Vector Valued Reproducing Kernel Hilbert Spaces}
+\begin{definition}[Vector Valued rkHs]
+Let $\calE$ be a Hilbert space. Let $\calH$ be a reproducing kernel Hilbert space on $\Omega$ with kernel $K$. Consider the tensor product $\calH \otimes \calE$.
+\pause
+
+We identify each element $f\in \calH \otimes \calE$ as a function from $\Omega$ to $\calE$ which satisfy the following property:
+\begin{equation*}
+\ip{f(w), e}_{\calE} = \ip{f, K(\cdot, w) \otimes e}_{\calH \otimes \calE}
+\end{equation*}
+\pause
+
+The aforementioned product $\calH \otimes \calE$ is said to be \textit{$\calE$-valued reproducing kernel Hilbert space}.
+\end{definition}
+
+\end{frame}
+
+
+\begin{frame}{An example of vector valued rkHs}
+Let $\calH$ be a rkHs on $\Omega$ and let $\C ^{n}$ be the (usual) inner product space.
+\pause
+If $f \in \calH$ and $e_{j}$ is an element of the standard orthonormal basis of $\C^{n}$ then by definition, we have that for $w \in \Omega$ and $e_{i} \in \C^{n}$,
+\begin{align*}
+\ip{f \otimes e_{j}, K\left( \cdot , w \right) \otimes e_{i}}_{\calH \otimes \calE} &= \ip{f, K\left( \cdot , w \right)}_{\calH} \ip{e_{j}, e_{i}}_{\C ^{n}} \\
+&= f(w) \delta_{ij}
+\end{align*}
+and hence $\ip{(f\otimes e_{j})(w), e_{j}}_{\C ^{n}} = f(w)\delta_{ij}$. \pause Therefore, $f\otimes e_{j}$ is the following $\C^{n}$ valued function (when each element in $\C ^{n}$ is viewed as column vector):
+
+\begin{equation*}
+(f\otimes e_{j}) (w) = 
+\begin{bmatrix}
+0 \\
+\vdots \\
+\underbrace{f(w)}_{\textcolor{red}{\text{jth entry}}}\\
+\vdots \\
+0
+\end{bmatrix} \qquad (w \in \Omega)
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Multipliers of Vector Valued rkHs}
+Let $\calE, \calE'$ be two Hilbert space and $\calH$ be a reproducing kernel Hilbert space on $\Omega$. Consider $\calH \otimes \calE$ and $\calH \otimes \calE '$ as vector valued reproducing kernel Hilbert spaces on $\Omega$.
+
+\pause
+
+A \textit{multiplier} $\Phi$ is a $B\left( \calE , \calE' \right)$-valued function on $\Omega$ such that $\Phi f \in \calH \otimes \calE '$ for each $f \in \calH \otimes \calE$. Note that $\Phi f$ is viewed as a $\calE '$-valued function in the following sense:
+\begin{equation*}
+(\Phi f)(w) =  \Phi(w) f(w) \qquad (w \in \Omega).
+\end{equation*}
+
+The set of all multipliers from $\calH \otimes \calE$ to $\calH \otimes \calE'$ is denoted by $\calM _{\calH} \left( \calE , \calE' \right)$.
+
+\pause
+
+\begin{lemma}
+If $\Phi \in \calM _{\calH} \left( \calE , \calE' \right)$ then $M_{\Phi}^{*} \left( K\left( \cdot , w \right) \otimes e' \right) = K\left( \cdot, w \right) \otimes \Phi(w) ^{*} e'$ for each $w\in \Omega$ and $e' \in \calE'$.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Operator Pick Interpolation}
+Let $\calH$ be a rkHs on $\Omega$ and $\calE , \calE'$ be two Hilbert spaces.
+\pause
+Suppose that $\lambda_{1}, \ldots, \lambda_{n} \in \Omega$ be distinct and $W_{1}, \ldots , W_{n} \in \cal{B} \left( \calE , \calE' \right)$. A couple of slides ago, we asked the following question:
+\begin{question}
+When can we find $\Phi \in \calM_{\calH} \left( \calE , \calE' \right)$ such that $\norm{M_{\Phi}} \le 1$ and $\Phi \left( \lambda_{i} \right) = W_{i}$ for each $i=1, \ldots , n$?
+\end{question}
+\pause
+A necessary condition is that the matrix of operators
+\begin{equation*}
+P_{n} = \left( \left( 1-W_{i} W_{j}^{*} \right) K\left( \lambda_{i}, \lambda_{j} \right) \right)_{i,j=1}^{n}
+\end{equation*}
+is a \textit{positive matrix of operators}. But it is not \textit{sufficient}!
+
+\pause
+\begin{definition}
+A matrix $T=\left( T_{ij} \right)$ consisting of operators in $\calH$ is said to be \textit{positive} if $\ip{Tv,v}_{\calH ^{n}} \ge 0$ for each $v\in \calH ^{n}$
+or equivalently, for each $v_{1}, \ldots , v_{n} \in \calH$,
+\begin{equation*}
+\sum_{i,j=1}^{n} \ip{T_{i,j} v_{j}, v_{i}}_{\calH} \ge 0.
+\end{equation*}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Complete Pick Property}
+\begin{definition}[Complete Pick Property]
+A rkHs $\calH$ on $\Omega$ with kernel $K$ is said to have the \textit{complete pick property} if for each $s,t \in \N$, we take any set of distinct points $\lambda_{1}, \ldots , \lambda_{m} \in \Omega$ and $W_{1}, \ldots , W_{m} \in \calB \left( \C ^{t}, \C^{s} \right)$, positivity of the Pick matrix, namely,
+\begin{equation*}
+P_{m} = \left( \left( 1-W_{i} W_{j}^{*} \right) K\left( \lambda_{i}, \lambda_{j} \right) \right)_{i,j=1}^{m}
+\end{equation*}
+implies the existence of $\Phi \in \calM_{\calH} \left( \C ^{t}, \C ^{s} \right)$ such that $\Phi \left( \lambda_{i} \right) = W_{i}$ and $\norm{M_{\Phi}} \le 1$.
+\end{definition}
+\pause
+
+\textcolor{red}{Remark}: Complete Pick Property implies the Pick property!
+
+\end{frame}
+
+
+\begin{frame}{McCullough-Quiggin Theorem}
+\citeauthor{zbMATH00222166} \cite{zbMATH00222166} showed that for a rkHs with (irreducible) kernel $K$ with the Complete Pick Property, it is necessary that for each $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n+1}\in \Omega$, the matrix
+\begin{equation*}
+Q_{n} = \left( 1-\frac{K\left( \lambda_{i}, \lambda_{n+1} \right)K\left( \lambda_{n+1}, \lambda_{j} \right)}{K\left( \lambda_{i}, \lambda_{j} \right) K\left( \lambda_{n+1}, \lambda_{n+1} \right)} \right)_{i,j=1}^{n}
+\end{equation*}
+is positive semidefinite. \citeauthor{MR1284929} \cite{MR1284929} showed that it is necessary. (Remark: The current formulation of this theorem is due to \citeauthor{MR1774853} \cite{MR1774853}.) 
+
+If a rkHs $\calH$ has a normalised kernel, that is there is some point $w \in \Omega$ such that $K \left( z,w \right) = 1$ for each $z \in \Omega$. Then the matrix $Q_{n}$ can be made pretty, that is, one just needs to check that the matrix
+\begin{equation*}
+Q_{n} = \left( 1-\frac{1}{k\left( \lambda_{i}, \lambda_{j} \right)} \right)_{i,j=1}^{n} \ge 0
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Final Words and some Open Questions}
+McCullough-Quiggin Theorem allows us to show that a large class of rkHs are Complete Pick Spaces, for instance, the Hardy Space, the Dirichlet space, the $\calH _{s}$-spaces for $s\le 0$. \pause
+\begin{question}
+Is there a "nice" characterisation of Pick Spaces, that is, the rkHs with the Pick property like we do for Complete Pick spaces?
+\end{question}
+\pause
+\begin{question}
+\citeauthor{MR2187439} \cite{MR2187439} showed there is a class of rkHs which are Pick but not Complete Pick but none of them were analytic function spaces. Are there any analytic rkHs on $\D$ which are Pick but not Complete Pick?
+\end{question}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+\nocite{*}
+\printbibliography
+\end{frame}
+\begin{frame}
+  \centering \Large
+  \textcolor[HTML]{3333B3}{\emph{Thank you for your attention!}}
+\end{frame}
+
+\end{document}

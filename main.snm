@@ -3,7 +3,8 @@
 \beamer@slide {def:rkHs}{8}
 \beamer@slide {eqn:kernel}{12}
 \beamer@slide {def:kernel-function}{12}
-\beamer@slide {def:mult-alg}{18}
-\beamer@slide {cor:boundedness-of-multiplier}{21}
-\beamer@slide {prop:adjoint-eigenvalue}{21}
-\beamer@slide {def:Pick space}{29}
+\beamer@slide {thm:Moore-Aronszajn}{16}
+\beamer@slide {def:mult-alg}{20}
+\beamer@slide {cor:boundedness-of-multiplier}{23}
+\beamer@slide {prop:adjoint-eigenvalue}{23}
+\beamer@slide {def:Pick space}{31}

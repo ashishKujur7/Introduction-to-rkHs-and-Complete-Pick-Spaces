@@ -44,23 +44,9 @@
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0022-1236,1096-0783}
       \field{journaltitle}{J. Funct. Anal.}
-      \field{number}{1}
       \field{title}{Complete {N}evanlinna-{P}ick kernels}
-      \field{volume}{175}
       \field{year}{2000}
-      \field{pages}{111\bibrangedash 124}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1006/jfan.2000.3599
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1006/jfan.2000.3599
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1006/jfan.2000.3599
-      \endverb
     \endentry
     \entry{zbMATH01757925}{book}{}
       \name{author}{2}{}{%
@@ -101,6 +87,29 @@
       \field{year}{2002}
       \true{nocite}
       \keyw{47-02,30-02,46-02,47A57,30E05,46E20,32A70}
+    \endentry
+    \entry{zbMATH03056506}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d03eab95d4bb0ced7a829086884aae65}{%
+           family={Aronszajn},
+           familyi={A\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d03eab95d4bb0ced7a829086884aae65}
+      \strng{fullhash}{d03eab95d4bb0ced7a829086884aae65}
+      \strng{bibnamehash}{d03eab95d4bb0ced7a829086884aae65}
+      \strng{authorbibnamehash}{d03eab95d4bb0ced7a829086884aae65}
+      \strng{authornamehash}{d03eab95d4bb0ced7a829086884aae65}
+      \strng{authorfullhash}{d03eab95d4bb0ced7a829086884aae65}
+      \field{labelalpha}{Aro50}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Trans. Am. Math. Soc.}
+      \field{title}{Theory of reproducing kernels}
+      \field{year}{1950}
     \endentry
     \entry{fricain:hal-04206953}{incollection}{}
       \name{author}{1}{}{%
@@ -286,8 +295,6 @@
       \field{isbn}{0-8176-3745-1}
       \field{title}{The local de {B}ranges-{R}ovnyak construction and complete {N}evanlinna-{P}ick kernels}
       \field{year}{1994}
-      \field{pages}{15\bibrangedash 24}
-      \range{pages}{10}
     \endentry
     \entry{zbMATH06562440}{book}{}
       \name{author}{2}{}{%
@@ -338,9 +345,6 @@
            given={Peter},
            giveni={P\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {English}%
-      }
       \strng{namehash}{5fcc672cc856248f1825371587d2a4f3}
       \strng{fullhash}{5fcc672cc856248f1825371587d2a4f3}
       \strng{bibnamehash}{5fcc672cc856248f1825371587d2a4f3}
@@ -352,18 +356,9 @@
       \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0378-620X}
       \field{journaltitle}{Integral Equations Oper. Theory}
-      \field{number}{2}
       \field{title}{For which reproducing kernel {Hilbert} spaces is {Pick}'s theorem true!}
-      \field{volume}{16}
       \field{year}{1993}
-      \field{pages}{244\bibrangedash 266}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1007/BF01358955
-      \endverb
-      \keyw{30E05,46E22,47A20}
     \endentry
     \entry{1cb1f5bb-aa4a-31e2-ba77-0159c6d327f4}{article}{}
       \name{author}{1}{}{%
@@ -387,24 +382,9 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{00029947}
       \field{journaltitle}{Transactions of the American Mathematical Society}
-      \field{number}{2}
       \field{title}{Generalized Interpolation in \texorpdfstring{$H^{\infty}$}{H-infinity}}
-      \field{urlday}{14}
-      \field{urlmonth}{4}
-      \field{urlyear}{2024}
-      \field{volume}{127}
       \field{year}{1967}
-      \field{urldateera}{ce}
-      \field{pages}{179\bibrangedash 203}
-      \range{pages}{25}
-      \verb{urlraw}
-      \verb http://www.jstor.org/stable/1994641
-      \endverb
-      \verb{url}
-      \verb http://www.jstor.org/stable/1994641
-      \endverb
     \endentry
     \entry{MR2187439}{article}{}
       \name{author}{1}{}{%
